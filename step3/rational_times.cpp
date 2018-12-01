@@ -1,12 +1,9 @@
-
 #include<stdio.h>
 #include<math.h>
 
-typedef long double ld;
-
 int main() {
 	int d, r1;
-	ld n, sum = 0, r2;
+	double n, sum = 0, r2;
 	register int i;
 
 	scanf("%d", &d);
