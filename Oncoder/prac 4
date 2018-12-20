@@ -1,0 +1,31 @@
+/*
+양의 정수가 들어있는 vector<int> arr가 주어집니다.
+
+vector<int> arr에 있는 정수 중 짝수인 정수의 개수를 리턴하시오.
+
+참고 / 제약 사항
+arr의 요소의 개수는 1개 이상, 50개 이하 입니다.
+arr의 각 요소는 1이상, 100이하의 정수 입니다.
+테스트 케이스
+vector<int> arr = [1,2,3,4] 리턴(정답): 2
+*/
+
+#include <vector>
+#include <stdio.h>
+using namespace std;
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+class Solution{
+public:
+    int solution(vector<int> arr){
+        int cnt=0,i,n;
+        n = arr.size();
+        
+        
+        for(i=0;i<n;i++){
+            if(!(arr[i]&1)) cnt+=1;
+        }
+
+        return cnt;
+    }
+};
