@@ -1,0 +1,38 @@
+/*
+정수 int a가 주어집니다.
+1이상 int a이하의 정수 중 숫자에 13이 들어가는 숫자의 개수를 리턴하세요.
+
+참고 / 제약 사항
+a는 1이상, 10,000이하 입니다.
+테스트 케이스
+int a = 13 리턴(정답): 1
+*/
+
+//마지막 채점 결과가 오답
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+class Solution{
+public:
+    int solution(int a){
+        int n,i;
+        int S =13;
+        int cnt=0;
+        
+        if(10000<a) return 0;
+        else {
+            for(i=1;i<=a;i++){
+
+            n = i;
+            while(n){
+                if(n%100==S) cnt++;
+                n/=10;
+            }
+        }
+
+        return cnt;    
+ 
+            
+        }
+        
+    }
+};
