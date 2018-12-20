@@ -1,0 +1,28 @@
+/*
+두수 int a와 int b가 주어집니다.
+
+a3 + b2 를 리턴하세요.
+
+참고 / 제약 사항
+a와 b는 1이상, 10이하의 정수 입니다.
+테스트 케이스
+int a = 1
+int b = 3 리턴(정답): 10
+int a = 2
+int b = 2 리턴(정답): 12
+int a = 9
+int b = 3 리턴(정답): 738
+*/
+
+class Solution{
+public:
+    int solution(int a, int b){
+        int x,y;
+        
+        x = a*a*a;
+        y = b*b;
+        
+        
+        return x+y;
+    }
+};
