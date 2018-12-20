@@ -1,0 +1,68 @@
+/*
+양의 정수가 담긴 vector<int> arr가 주어집니다.
+vector<int> arr의 각 요소를 문자열이라 가정했을때의 "사전순" 기준 오름차순으로 정렬하여 리턴하세요.
+
+※ [15, 143, 167]을 "사전순" 기준 오름차순 정렬하면, [143, 15, 167] 입니다.
+
+참고 / 제약 사항
+arr의 요소의 개수는 1개 이상, 100개 이하 입니다.
+arr의 객 요소는 1이상, 1,000이하의 양의 정수 입니다.
+테스트 케이스
+vector<int> arr = [15,143,167] 리턴(정답): [143,15,167]
+*/
+
+#include <vector>
+#include<math.h>
+#define SWAP(a,b,type)do{type temp;temp=a;a=b;b=temp;}while(0)
+using namespace std;
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+class Solution{
+public:
+    vector<int> solution(vector<int> arr){
+        int i,j,a,b,n;
+        int t[100]{0,};
+        int x,y;
+        n = arr.size();
+        
+        for(i=0;i<n;i++){
+            a = arr[i];
+            while(a){
+                t[i] +=1;
+                a /=10;
+            }
+        }
+        
+        for(i=0;i<n-1;i++){
+            for(j=0;j<n-1;j++){
+                a = t[j];
+                b = t[j+1];
+                
+                while(1){
+                    x = arr[j] /pow(10,a-1);
+                    y = arr[j+1] /pow(10,b-1);
+                    if(x>y){
+                        SWAP(arr[j],arr[j+1],int);
+                        SWAP(t[j],t[j+1],int);
+                        break;
+                    }
+                    a--;
+                    b--;
+                    if(!a || !b){
+                        if (arr[j]/pow(10,a) > arr[j+1]/pow(10,b)) {
+						SWAP(arr[j], arr[j + 1], int);
+						SWAP(t[j], t[j + 1], int);
+					}
+                    
+                        break;
+                    }
+                    
+                }
+            }
+        }
+        
+        
+        
+        return arr;
+    }
+};
