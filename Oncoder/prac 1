@@ -1,0 +1,29 @@
+/*
+문제 설명
+주어진 string str을 그대로 리턴하세요.
+
+참고 / 제약 사항
+str의 길이는 1이상, 10이하 입니다.
+str은 알파벳 소문자로만 이루어져 있습니다.
+테스트 케이스
+string str = "oncoder" 리턴(정답): "oncoder"
+string str = "challenge" 리턴(정답): "challenge"
+*/
+
+#include <string>
+using namespace std;
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+class Solution{
+public:
+    string solution(string str){
+        
+        string name;
+        name = str;
+        
+        
+        
+        
+        return name;
+    }
+};
