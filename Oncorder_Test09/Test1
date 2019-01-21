@@ -1,0 +1,36 @@
+#include <vector>
+#include <stdio.h>
+#include <algorithm>
+
+using namespace std;
+
+class Solution {
+public:
+	vector<int> solution(int T, vector<int> requiredTime) {
+		vector<int> Result;
+		int i,t;
+		int sum = 0;
+		int R_sum = 0;
+		int arr[50] = {0,};
+
+		int n = requiredTime.size();
+		sort(requiredTime.begin(), requiredTime.end());
+		
+		for (i = 0; i < n; i++) {
+			if (sum + requiredTime[i] > T) break;
+			sum += requiredTime[i];
+			arr[i] = sum;
+		}
+		t = i;
+		
+		for (i = 0; i < t; i++) {
+			R_sum += arr[i];
+		}
+
+
+		Result.push_back(t);
+		Result.push_back(R_sum);
+
+		return Result;
+	}
+};
