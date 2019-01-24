@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+
+class Solution {
+public:
+	double solution(int x1, int m1, int x2, int m2) {
+		double x;
+		x = 1.0 * m1 / m2;
+		double a = sqrt(x);
+		double r = ((a*x2) + x1) / (a+1);
+    
+		return r;
+	}
+};
