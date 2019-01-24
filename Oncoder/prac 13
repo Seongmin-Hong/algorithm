@@ -1,0 +1,39 @@
+#include <vector>
+using namespace std;
+int arr[50];
+
+int Max;
+
+vector<int> Result;
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+class Solution {
+public:
+	vector<int> solution(vector<int> sequence) {
+		int n, i, j = 1, k;
+		int len=0,flag=0;
+
+		n = sequence.size();
+		for (i = n-1; i >= 0; i--) {
+			for (j = 0; j < len; j++) {
+				if (sequence[i] == arr[j]) {
+					flag = 1;
+					break;
+				}
+			}
+			if (!flag) arr[len++] = sequence[i];
+			flag = 0;
+		}
+		j = len;
+		for (i = 0; i < len; i++) {
+			Result.push_back(arr[--j]);
+	
+		}
+	
+
+
+
+
+		return Result;
+	}
+};
