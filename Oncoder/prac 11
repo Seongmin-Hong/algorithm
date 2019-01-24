@@ -1,0 +1,35 @@
+#include <string>
+#include <vector>
+#include <math.h>
+using namespace std;
+
+//핵심 소스코드의 설명을 주석으로 작성하면 평가에 큰 도움이 됩니다.
+class Solution {
+public:
+	int solution(int balance, vector<string> transactions) {
+		int n,i,j,t;
+		int cnt,sum;
+
+		n = transactions.size();
+		for (i = 0; i < n; i++) {
+			sum = 0;
+			cnt = transactions[i].size();
+			t = pow(10, cnt - 3);
+			
+			for (j = 2; j < cnt; j++) {
+				sum += (transactions[i][j] - '0') * t;
+				t /= 10;
+			}
+			
+			if (transactions[i][0] == 'C') {
+				balance += sum;
+			}
+			else {
+				balance -= sum;
+			}
+
+		}
+
+		return balance;
+	}
+};
